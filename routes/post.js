@@ -11,6 +11,9 @@ router.get('/', verify, (req, res) => {
 
 });
 
-
+router.post('/', verify, (req, res) => {
+    console.log(req.body);
+    res.status(200).send();
+});
 
 module.exports = router;

@@ -10,7 +10,11 @@ dotenv.config();
 const usersRoute = require("./routes/user");
 const postRoute = require("./routes/post");
 
-app.use(cors());
+app.use(cors({
+    exposedHeaders: ['Content-Length', 'token'],
+  }));
+
+// app.use(cors());
 app.use(express.json());
 //Adding middleware to point to userRoute
 app.use('/users',usersRoute);
